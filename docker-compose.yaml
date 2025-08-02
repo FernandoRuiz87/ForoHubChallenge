@@ -1,0 +1,17 @@
+version: '3.0'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: ForoHub
+    environment:
+      MYSQL_DATABASE: 'ForoHub'
+      MYSQL_USER: 'usuario'
+      MYSQL_PASSWORD: 'contrasena'
+      MYSQL_ROOT_PASSWORD: 'contrasena_root'
+    ports:
+      - '12345:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
