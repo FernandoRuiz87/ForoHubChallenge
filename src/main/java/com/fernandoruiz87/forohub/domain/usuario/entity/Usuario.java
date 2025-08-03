@@ -66,4 +66,16 @@ public class Usuario implements UserDetails {
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
     }
+
+    //TEMPORAL
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                '}';
+    }
 }

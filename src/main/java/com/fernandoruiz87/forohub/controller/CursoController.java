@@ -42,11 +42,13 @@ public class CursoController {
         return ResponseEntity.ok(respuesta);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<RespuestaCurso> actualizarCurso(@RequestBody @Valid ActualizarCurso datos) {
+    public ResponseEntity<RespuestaCurso> actualizarCurso(@RequestBody @Valid ActualizarCurso datos,
+    @PathVariable Long id
+    ) {
         // Verifica si el curso existe
-        Curso curso = cursoRepository.findById(datos.id())
+        Curso curso = cursoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Curso no encontrado"));
 
         // Actualiza los datos del curso
@@ -62,7 +64,7 @@ public class CursoController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity eliminarCursoa(@PathVariable Long id) {
+    public ResponseEntity eliminarCurso(@PathVariable Long id) {
         Curso curso = cursoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Curso no encontrado"));
         // Eliminar el curso

@@ -2,6 +2,7 @@ package com.fernandoruiz87.forohub.domain.usuario;
 
 import com.fernandoruiz87.forohub.domain.usuario.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Optional;
 
@@ -9,4 +10,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     boolean existsByEmail(String email);
 
     Optional<Usuario> findByEmail(String email);
+
+    UserDetails findUserByEmail(String email);
 }

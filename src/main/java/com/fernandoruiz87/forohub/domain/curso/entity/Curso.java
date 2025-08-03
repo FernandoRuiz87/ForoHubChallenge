@@ -4,7 +4,6 @@ import com.fernandoruiz87.forohub.domain.curso.CategoriaCurso;
 import com.fernandoruiz87.forohub.domain.curso.dto.ActualizarCurso;
 import com.fernandoruiz87.forohub.domain.curso.dto.RegistroCurso;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
